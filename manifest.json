@@ -1,8 +1,11 @@
 {
   "manifest_version": 2,
   "name": "Hack Amazon",
-  "version": "3.0",
+  "version": "3.1",
   "description": "Replace URL and attach links in amazon website",
+  "icons" : {
+    "128": "icon128.png"
+  },
   "background": {
     "scripts": [
       "tiny-background.js",
