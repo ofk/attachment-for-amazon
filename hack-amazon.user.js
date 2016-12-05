@@ -2,6 +2,7 @@
 // @name      Hack Amazon
 // @namespace http://0fk.org/
 // @include   http://www.amazon.co.jp/*
+// @include   https://www.amazon.co.jp/*
 // @run-at    document-end
 // ==/UserScript==
 
