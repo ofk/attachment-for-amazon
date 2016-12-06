@@ -1,6 +1,6 @@
 (function (tiny, chrome) {
   tiny.options.data || (tiny.options.data = {
-    associate_id: 'ofk00-22',
+    associate_id: '',
     attach_bookmeter: true,
     attach_calil: true
   });
