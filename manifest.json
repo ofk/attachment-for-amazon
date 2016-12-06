@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Attachment for Amazon",
-  "version": "3.1.1",
-  "description": "Replace URL and attach links in amazon website",
+  "version": "3.1.2",
+  "description": "Attach links and clean URL in amazon website",
   "icons" : {
     "128": "icon128.png"
   },

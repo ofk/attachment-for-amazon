@@ -38,11 +38,11 @@
     var asin = asinNode.value;
     if (!asinNode.value) return;
 
-    replaceURL('/dp/' + asin + (options.associate_id ? '?tag=' + options.associate_id : ''));
-
     var links = [];
     options.attach_bookmeter && links.push({ label: 'bookmeter', url: 'http://bookmeter.com/b/' + asin });
     options.attach_calil && links.push({ label: 'calil', url: 'https://calil.jp/book/' + asin });
     links.length && attachLinks(links);
+
+    replaceURL('/dp/' + asin); // + (options.associate_id ? '?tag=' + options.associate_id : '')
   });
 }(chrome, document, history));
