@@ -38,7 +38,7 @@
     var asin = asinNode.value;
     if (!asinNode.value) return;
 
-    options.associate_id && replaceURL('/dp/' + asin + '?tag=' + options.associate_id);
+    replaceURL('/dp/' + asin + (options.associate_id ? '?tag=' + options.associate_id : ''));
 
     var links = [];
     options.attach_bookmeter && links.push({ label: 'bookmeter', url: 'http://bookmeter.com/b/' + asin });
