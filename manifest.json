@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Hack Amazon",
-  "version": "3.1",
+  "name": "Attachment for Amazon",
+  "version": "3.1.1",
   "description": "Replace URL and attach links in amazon website",
   "icons" : {
     "128": "icon128.png"
@@ -15,7 +15,7 @@
   },
   "content_scripts": [
     {
-      "js": ["hack-amazon.user.js"],
+      "js": ["attachment-for-amazon.user.js"],
       "matches": ["http://www.amazon.co.jp/*", "https://www.amazon.co.jp/*"],
       "run_at" : "document_end"
     }

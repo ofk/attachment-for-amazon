@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name      Hack Amazon
+// @name      Attachment for Amazon
 // @namespace http://0fk.org/
 // @include   http://www.amazon.co.jp/*
 // @include   https://www.amazon.co.jp/*
@@ -14,7 +14,7 @@
   function attachLinks(links) {
     var hrNode = document.querySelector('#centerCol>hr');
     if (!hrNode) {
-      console.error('[hack-amazon] hrNode not found.');
+      console.error('[attachment-for-amazon] hrNode not found.');
       return;
     }
 
