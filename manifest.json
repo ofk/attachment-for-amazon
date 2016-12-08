@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Attachment for Amazon",
-  "version": "3.1.2",
+  "version": "3.1.3",
   "description": "Attach links and clean URL in amazon website",
   "icons" : {
     "128": "icon128.png"
