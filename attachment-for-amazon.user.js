@@ -43,6 +43,6 @@
     options.attach_calil && links.push({ label: 'calil', url: 'https://calil.jp/book/' + asin });
     links.length && attachLinks(links);
 
-    replaceURL('/dp/' + asin + (options.associate_id ? '?tag=' + options.associate_id : ''));
+    options.rewrite_path && replaceURL(options.rewrite_path.replace(/{asin}/g, asin));
   });
 }(chrome, document, history));
