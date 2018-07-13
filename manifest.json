@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Attachment for Amazon",
-  "version": "4.0.0",
-  "description": "Attach links and clean URL in amazon website",
+  "version": "4.0.1",
+  "description": "Attach some shortcut button in Amazon.co.jp item page",
   "icons" : {
     "128": "icon128.png"
   },

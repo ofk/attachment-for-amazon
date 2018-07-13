@@ -7,10 +7,6 @@
 // ==/UserScript==
 
 (function (chrome, document, history) {
-  function replaceURL(newURL) {
-    history.replaceState('', '', newURL);
-  }
-
   function attachLinks(links) {
     var hrNode = document.querySelector('#centerCol>hr');
     if (!hrNode) {
@@ -23,9 +19,20 @@
       if (i) divNode.appendChild(document.createTextNode(' '));
       var aNode = divNode.appendChild(document.createElement('a'));
       aNode.setAttribute('href', links[i].url);
+      links[i].onClick && aNode.addEventListener('click', links[i].onClick);
       aNode.appendChild(document.createTextNode(links[i].label));
     }
     hrNode.parentNode.insertBefore(divNode, hrNode.nextSibling);
+  }
+
+  function copyText(str) {
+    var copyNode = document.createElement('textarea');
+    copyNode.value = str;
+    document.body.appendChild(copyNode);
+    copyNode.select();
+    var ret = document.execCommand('copy');
+    document.body.removeChild(copyNode);
+    return ret;
   }
 
   chrome.runtime.sendMessage({
@@ -39,10 +46,15 @@
     if (!asinNode.value) return;
 
     var links = [];
+    var copyUrl = function (e) {
+      e.preventDefault();
+      var ret = copyText(location.protocol + '//' + location.host + options.rewrite_path.replace(/{asin}/g, asin));
+      ret || alert('Fail to copy clean URL');
+    };
+    options.rewrite_path && links.push({ label: 'copy', url: '#', onClick: copyUrl });
     options.attach_bookmeter && links.push({ label: 'bookmeter', url: 'http://bookmeter.com/b/' + asin });
     options.attach_calil && links.push({ label: 'calil', url: 'https://calil.jp/book/' + asin });
-    links.length && attachLinks(links);
 
-    options.rewrite_path && replaceURL(options.rewrite_path.replace(/{asin}/g, asin));
+    links.length && attachLinks(links);
   });
 }(chrome, document, history));
